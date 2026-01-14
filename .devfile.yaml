@@ -25,9 +25,19 @@ components:
           name: test-endpoint
           protocol: tcp
           targetPort: 8081
+        - exposure: none
+          name: kubedock
+          protocol: tcp
+          targetPort: 2475
       env:
         - value: /home/jboss/.m2
           name: MAVEN_CONFIG
+        - name: KUBEDOCK_ENABLED
+          value: 'true'
+        - name: KUBEDOCK_PARAMS
+          value: "--reverse-proxy --kubeconfig /home/user/.kube/c onfig --initimage quay.io/danieloh30/kubedock:latest"
+        - name: DOCKER_HOST
+          value: 'tcp://127.0.0.1:2475'
         - value: -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G
           name: MAVEN_OPTS
         - name: TESTCONTAINERS_RYUK_DISABLED
