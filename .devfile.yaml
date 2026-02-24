@@ -35,7 +35,7 @@ components:
         - name: KUBEDOCK_ENABLED
           value: 'true'
         - name: KUBEDOCK_PARAMS
-          value: "--reverse-proxy --kubeconfig /home/user/.kube/c onfig --initimage quay.io/danieloh30/kubedock:latest"
+          value: "--reverse-proxy --kubeconfig /home/user/.kube/config --initimage quay.io/danieloh30/kubedock:latest"
         - name: DOCKER_HOST
           value: 'tcp://127.0.0.1:2475'
         - value: -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G
