@@ -4,11 +4,11 @@ USERXX=$1
 
 if [ -z "$USERXX" -o "$USERXX" = "userXX" ]
   then
-    echo "Usage: Input your username like deploy-people.sh user1"
+    echo "Usage: Input your username like deploy-people.sh your-ibm-email-id-com"
     exit;
 fi
 
-echo Your username is $USERXX
+echo "Your project name is ${USERXX}-project"
 echo Deploy people service........
 
 oc project $USERXX-project
